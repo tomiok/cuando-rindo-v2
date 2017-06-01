@@ -2,7 +2,6 @@
 \.DS_Store
 \.classpath
 \.project
-\.idea/*
 \.settings
 \.springBeans
 \.metadata/
@@ -17,3 +16,5 @@ target/
 build/*
 gradle/*
 *.jar
+
+.idea/
