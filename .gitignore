@@ -8,20 +8,11 @@
 Servers/
 target/
 */out/*
-*/.idea
+*.idea
 */*.iml
-*/.gradle
-*/build
 */.build
 build/*
 gradle/*
 *.jar
-
-.idea/
-
-.idea/gradle.xml
-.idea/misc.xml
-.idea/modules.xml
-.idea/modules/cuando-rindo-v2.iml
-.idea/workspace.xml
+.idea/*
 
