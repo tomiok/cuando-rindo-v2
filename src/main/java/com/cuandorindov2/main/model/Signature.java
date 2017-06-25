@@ -6,6 +6,7 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by tomas.lingotti on 27/05/17.
@@ -17,7 +18,7 @@ public class Signature implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-
+    @NotNull
     private String name;
 
     @Enumerated(EnumType.STRING)

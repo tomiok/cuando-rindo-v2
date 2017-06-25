@@ -1,52 +1,26 @@
-package com.cuandorindov2.main.model;
+package com.cuandorindov2.main.resources.requests;
 
-import java.io.Serializable;
+import com.cuandorindov2.main.model.Address;
+import com.cuandorindov2.main.model.Email;
+import com.cuandorindov2.main.model.Establishment;
 import java.util.Collection;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-
-
-import static javax.persistence.CascadeType.PERSIST;
+import javax.validation.constraints.NotNull;
 
 /**
- * Created by tomas.lingotti on 27/05/17.
+ * Created by tomas.lingotti on 10/06/17.
  */
-@Entity
-public class Student implements Serializable {
+public class StudentRequest {
 
-    private static final long serialVersionUID = 5618910582951229913L;
-
-    @Id
-    @GeneratedValue
-    private Long id;
+    @NotNull
     private String name;
-    @Column(name = "mid_name")
     private String midName;
-    @Column(name = "last_name")
+    @NotNull
     private String lastName;
-    @ManyToMany(cascade = PERSIST)
-    @JoinTable(name = "students_establishments",
-    joinColumns = @JoinColumn(name = "student_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "establishment_id", referencedColumnName = "id"))
+    @NotNull
     private Collection<Establishment> establishments;
-    @OneToOne(cascade = PERSIST)
+    @NotNull
     private Address address;
-    @OneToOne
     private Email email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

@@ -1,12 +1,14 @@
 package com.cuandorindov2.main.model;
 
 import java.io.Serializable;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+
+import static javax.persistence.CascadeType.ALL;
 
 /**
  * Created by tomas.lingotti on 31/05/17.
@@ -21,10 +23,10 @@ public class Address implements Serializable {
     private Long id;
     private String street;
     private String number;
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne(cascade = ALL)
     @JoinColumn(name = "country_id")
     private Country country;
-    @ManyToOne(cascade = CascadeType.REFRESH)
+    @ManyToOne(cascade = ALL)
     @JoinColumn(name = "city_id")
     private City city;
 

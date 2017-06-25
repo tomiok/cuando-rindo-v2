@@ -7,6 +7,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+
+import static javax.persistence.CascadeType.ALL;
+import static javax.persistence.CascadeType.PERSIST;
 
 /**
  * Created by tomas.lingotti on 27/05/17.
@@ -18,11 +24,13 @@ public class Establishment implements Serializable {
     @Id
     @GeneratedValue
     private Long id;
-
+    @NotNull
     private String name;
-
-    @OneToMany(cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = PERSIST)
     private Collection<Signature> signatures;
+    @OneToOne(cascade = ALL)
+    @NotNull
+    private Address address;
 
     public Long getId() {
         return id;
@@ -46,5 +54,13 @@ public class Establishment implements Serializable {
 
     public void setSignatures(Collection<Signature> signatures) {
         this.signatures = signatures;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

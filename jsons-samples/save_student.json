@@ -1,0 +1,40 @@
+{
+  "address": {
+    "city": {
+      "code": "2000",
+      "id": 0,
+      "name": "Rosario"
+    },
+    "id": 0,
+    "number": "string",
+    "street": "string"
+  },
+  "establishments": [
+    {
+      "address": {
+        "city": {
+          "code": "string",
+          "id": 0,
+          "name": "string"
+        },
+        "id": 0,
+        "number": "string",
+        "street": "string"
+      },
+      "id": 0,
+      "name": "string",
+      "signatures": [
+        {
+          "coursingActive": true,
+          "grade": "FIRST",
+          "id": 0,
+          "name": "string"
+        }
+      ]
+    }
+  ],
+  "id": 0,
+  "lastName": "string",
+  "midName": "string",
+  "name": "string"
+}
