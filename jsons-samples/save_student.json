@@ -15,7 +15,7 @@
         "city": {
           "code": "string",
           "id": 0,
-          "name": "string"
+          "name": "String"
         },
         "id": 0,
         "number": "string",
