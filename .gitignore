@@ -8,10 +8,11 @@
 Servers/
 target/
 */out/*
-*.idea
 */*.iml
 */.build
 build/*
 gradle/*
 *.jar
 .gradle/
+gradlew
+\.idea

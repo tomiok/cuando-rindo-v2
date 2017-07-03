@@ -3,15 +3,16 @@ package com.cuandorindov2.main.resources.requests;
 import com.cuandorindov2.main.model.Address;
 import com.cuandorindov2.main.model.Email;
 import com.cuandorindov2.main.model.Establishment;
-import java.util.Collection;
+
 import javax.validation.constraints.NotNull;
+import java.util.Collection;
 
 /**
  * Created by tomas.lingotti on 10/06/17.
  */
 public class StudentRequest {
 
-    @NotNull
+    @NotNull(message = "The first name may not be null.")
     private String name;
     private String midName;
     @NotNull

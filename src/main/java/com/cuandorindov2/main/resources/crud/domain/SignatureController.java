@@ -8,14 +8,13 @@ import com.cuandorindov2.main.model.Student;
 import com.cuandorindov2.main.repositories.EstablishmentRepository;
 import com.cuandorindov2.main.repositories.SignatureRepository;
 import com.cuandorindov2.main.repositories.StudentRepository;
-import java.util.Optional;
-import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.transaction.Transactional;
+import java.util.Optional;
 
 import static com.cuandorindov2.utils.rest.AppTypes.APPLICATION_JSON;
 import static com.cuandorindov2.utils.rest.URLConstants.PREFIX_SIGNATURE;

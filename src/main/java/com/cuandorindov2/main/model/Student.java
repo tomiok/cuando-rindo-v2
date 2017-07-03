@@ -39,6 +39,10 @@ public class Student implements Serializable {
     private Address address;
     @OneToOne
     private Email email;
+    @Column
+    private String countryCode;
+
+    private String phoneNumber;
 
     public Long getId() {
         return id;

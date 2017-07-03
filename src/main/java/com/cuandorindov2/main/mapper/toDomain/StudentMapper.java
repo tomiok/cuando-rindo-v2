@@ -36,57 +36,33 @@ public class StudentMapper implements AbstractMapper<StudentRequest, Student> {
         private Address address;
         private Email email;
 
-        private void setName(final String name) {
-            this.name = name;
-        }
-
-        private void setMidName(final String midName) {
-            this.midName = midName;
-        }
-
-        private void setLastName(final String lastName) {
-            this.lastName = lastName;
-        }
-
-        private void setEstablishments(final Collection<Establishment> establishments) {
-            this.establishments = establishments;
-        }
-
-        private void setAddress(final Address address) {
-            this.address = address;
-        }
-
-        private void setEmail(final Email email) {
-            this.email = email;
-        }
-
         StudentBuilder name(final String name) {
-            this.setName(name);
+            this.name = name;
             return this;
         }
 
         StudentBuilder midName(final String midName) {
-            this.setMidName(midName);
+            this.midName = midName;
             return this;
         }
 
         StudentBuilder lastName(final String lastName) {
-            this.setLastName(lastName);
+            this.lastName = lastName;
             return this;
         }
 
         StudentBuilder establishments(final Collection<Establishment> ests) {
-            this.setEstablishments(ests);
+            this.establishments = ests;
             return this;
         }
 
         StudentBuilder address(final Address address) {
-            this.setAddress(address);
+            this.address = address;
             return this;
         }
 
         StudentBuilder email(final Email email) {
-            this.setEmail(email);
+            this.email = email;
             return this;
         }
 

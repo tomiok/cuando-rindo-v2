@@ -1,25 +1,35 @@
 package com.cuandorindov2.main.validator;
 
-import com.cuandorindov2.main.resources.requests.StudentRequest;
-import java.util.Set;
 import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.ValidationException;
 import javax.validation.Validator;
-import org.springframework.beans.factory.annotation.Autowired;
+import javax.validation.ValidatorFactory;
+import java.util.Set;
 
 /**
  * Created by tomas.lingotti on 10/06/17.
  */
-public class ApiValidator implements DefaultValidator<StudentRequest>{
+public class ApiValidator implements DefaultValidator {
 
     private final Validator validator;
 
-    @Autowired
-    public ApiValidator(Validator validator) {
-        this.validator = validator;
+    public ApiValidator() {
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+        validator = validatorFactory.getValidator();
     }
 
     @Override
-    public void Validate(StudentRequest beanToValidate) {
-        Set<ConstraintViolation<?>> constraintValidations = this.validator.validate(beanToValidate, null);
+    public <T> void validate(T beanToValidate) {
+       final Set<ConstraintViolation<T>> constraintValidations = this.validator.validate(beanToValidate);
+       if (!constraintValidations.isEmpty()) {
+           //this may have more than one exception
+           throw new ValidationException("At least, <<" + constraintValidations
+                   .stream()
+                   .findFirst()
+                   .get()
+                   .getMessage()
+           + ">> is a failure in the validation.");
+       }
     }
 }
